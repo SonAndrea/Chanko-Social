@@ -2,3 +2,37 @@
 java = "temurin-21"
 node = "24"
 pnpm = "10"
+
+[env]
+_.file = ".env"
+
+[tasks."db:up"]
+description = "Start local Postgres"
+run = "docker compose up -d db"
+
+[tasks."db:down"]
+description = "Stop local Postgres (keeps data)"
+run = "docker compose down"
+
+[tasks."db:reset"]
+description = "Wipe local Postgres and start fresh"
+run = "docker compose down -v && docker compose up -d db"
+
+[tasks."db:psql"]
+description = "Open a psql shell"
+run = "docker compose exec db psql -U chanko -d chanko"
+
+[tasks.api]
+description = "Run the Spring Boot API on :8080"
+dir = "api"
+run = "./gradlew bootRun"
+
+[tasks."api:test"]
+description = "Run backend tests"
+dir = "api"
+run = "./gradlew test"
+
+[tasks.web]
+description = "Run the Next.js dev server on :3000"
+dir = "web"
+run = "pnpm dev"
