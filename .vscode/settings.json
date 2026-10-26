@@ -1,0 +1,12 @@
+{
+  // Always use 2 spaces; don't infer indentation from a file's existing contents
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+
+  // Guide at the formatter's max line width (lineSplit in api/eclipse-formatter.xml)
+  "editor.rulers": [100],
+
+  "java.format.settings.url": "api/eclipse-formatter.xml",
+  "java.format.settings.profile": "Chanko"
+}
