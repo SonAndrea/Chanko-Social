@@ -18,6 +18,12 @@ spring:
 
 server:
   port: 8080
+  servlet:
+    session:
+      cookie:
+        http-only: true        # JS can't read the session cookie
+        same-site: lax         # not sent on cross-site POSTs (CSRF protection; see SecurityConfig)
+        # secure: true         # enable once served over HTTPS
 
 management:
   endpoints:
