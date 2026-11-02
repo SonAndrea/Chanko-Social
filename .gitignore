@@ -247,3 +247,5 @@ $RECYCLE.BIN/
 .env.*
 !.env.example
 mise.local.toml
+
+backups/
